@@ -31,7 +31,7 @@ void main(List<String> args) {
 //     'Sister': Person(),
 //     'Fishy': Fish(),
 //   };
-
+ 
 //   final allValues = [
 //     momAndDad,
 //     broatherAndSisterAndMyFish,
@@ -52,15 +52,99 @@ void main(List<String> args) {
 //   const KeyValue<int, int> four = KeyValue(1, 2);
 //   print(four);
   
-  // Example:4 =====================
+  // Example:5 =====================
   
+//   const JSON<String> json = {
+    
+//     'name' : 'John',
+//     'address' : '123 Main St',
+    
+//   };
+  
+//   print(json);
+  
+  
+  // Example:6 =====================
+  
+//   const person = Persons(height: 1.7);
+//   const dog = Dog(height: 1);
+  
+//   print(person.height);
+//   print(dog.height);
+  
+  
+  // Example:7 =====================
+  
+//   const tuple = Tuple(1, 20.2);
+  
+//   print(tuple);
+//   final swapped = tuple.swap();
+//   print(swapped);
+  
+//   print(tuple.sum);
+//   print(swapped.sum);
+
+  
+    // Example:8 =====================
   
   
 }
 
+
+ // Example:7 =====================
+
+class Tuple <L, R>{
+  final L left; 
+  final R right;
+  const Tuple(this.left, this.right);
+  
+  @override
+  String toString() => 'Tople , left = $left, right = $right';
+  
+  
+}
+
+extension <L, R> on Tuple<L, R>{
+Tuple<R, L> swap() => Tuple(right, left);  
+}
+
+extension<L extends num,R extends num>  on Tuple<L, R> {
+  num get sum => left + right;
+}
+
+  // Example:6 =====================
+
+// mixin HasHeight<H extends num>{
+//   H get height;
+// }
+
+// typedef HasIntHeight = HasHeight<int>;
+
+// typedef HasDoubleHeight = HasHeight<double>;
+
+// class Persons with HasDoubleHeight{
+  
+//   @override
+//   final double height;
+//   const Persons({required this.height});
+  
+// }
+
+// class Dog with HasIntHeight{
+  
+//   @override
+//   final int height;
+//   const Dog({required this.height});
+  
+// }
+
+
+
+
+
 // Example:5 =====================
 
-
+typedef JSON<T> = Map<String, T>;
 // Example:4 =====================
 typedef KeyValue<K,V> = MapEntry<K,V>;
 
